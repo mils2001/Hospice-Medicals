@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hospital App - Patient Management</title>
-     <script src="https://cdn.tailwindcss.com"></script> 
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-100 min-h-screen">
     <header class="bg-blue-600 text-white text-center p-4">
@@ -13,13 +13,9 @@
     </header>
 
     <main class="p-8">
-        <!-- Patient Registration Form -->
-        
-
-        <!-- Patient List -->
+        <!-- Patient List Section -->
         <section>
             <h2 class="text-2xl font-semibold mb-4">Patient List</h2>
-        
             <div class="flex mb-4 space-x-2">
                 <input 
                     type="text" 
@@ -33,29 +29,87 @@
                     Search
                 </button>
             </div>
-        
             <div id="patientList" class="space-y-4"></div>
         </section>
         <section>
-            <h2 class="text-2xl font-semibold mb-4">Add New Patient</h2>
             <form id="patientForm" class="space-y-4 mb-6">
-                <input type="text" id="name" placeholder="Name" required 
-                       class="w-full p-2 border rounded-md" />
-                <input type="number" id="age" placeholder="Age" required 
-                       class="w-full p-2 border rounded-md" />
-                <input type="text" id="diagnosis" placeholder="Diagnosis" required 
-                       class="w-full p-2 border rounded-md" />
-                <input type="text" id="prescription" placeholder="Prescription" required 
-                       class="w-full p-2 border rounded-md" />
-                <button type="submit" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
+                <input 
+                    type="text" 
+                    id="name" 
+                    placeholder="Name" 
+                    required 
+                    class="w-full p-2 border rounded-md" 
+                />
+                <input 
+                    type="number" 
+                    id="age" 
+                    placeholder="Age" 
+                    required 
+                    class="w-full p-2 border rounded-md"
+                />
+                <input 
+                    type="text" 
+                    id="diagnosis" 
+                    placeholder="Diagnosis" 
+                    required 
+                    class="w-full p-2 border rounded-md"
+                />
+                <input 
+                    type="text" 
+                    id="prescription" 
+                    placeholder="Prescription" 
+                    required 
+                    class="w-full p-2 border rounded-md"
+                />
+                <button 
+                    type="submit" 
+                    class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
                     Add Patient
                 </button>
             </form>
-        
             
-        
-        
-         </main>
+        </section>
+
+        <!-- Patient Registration Form -->
+        <section>
+            <h2 class="text-2xl font-semibold mb-4">Add New Patient</h2>
+            <form id="patientForm" class="space-y-4 mb-6">
+                <input 
+                    type="text" 
+                    id="name" 
+                    placeholder="Name" 
+                    required 
+                    class="w-full p-2 border rounded-md" 
+                />
+                <input 
+                    type="number" 
+                    id="age" 
+                    placeholder="Age" 
+                    required 
+                    class="w-full p-2 border rounded-md"
+                />
+                <input 
+                    type="text" 
+                    id="diagnosis" 
+                    placeholder="Diagnosis" 
+                    required 
+                    class="w-full p-2 border rounded-md"
+                />
+                <input 
+                    type="text" 
+                    id="prescription" 
+                    placeholder="Prescription" 
+                    required 
+                    class="w-full p-2 border rounded-md"
+                />
+                <button 
+                    type="submit" 
+                    class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
+                    Add Patient
+                </button>
+            </form>
+        </section>
+    </main>
 
     <footer class="bg-gray-800 text-white text-center p-4">
         <p>&copy; 2024 Hospice Medicals. All Rights Reserved.</p>
@@ -64,4 +118,3 @@
     <script src="index.js"></script>
 </body>
 </html>
-
