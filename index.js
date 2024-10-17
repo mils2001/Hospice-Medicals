@@ -5,56 +5,60 @@ const searchInput = document.getElementById("search");
 const searchBtn = document.getElementById("searchBtn");
 const patientForm = document.getElementById("patientForm");
 
-let globalId = 10001; // Consider fetching latest ID dynamically if necessary.
+let globalId = 10001; // Consider fetching latest ID dynamically if necessary
 
 // Add Patient Functionality
-function addPatient(event) {
+async function addPatient(event) {
     event.preventDefault();
     console.log("Registering patient...");
 
     const name = document.getElementById("name").value;
-    const age = document.getElementById("age").value;
+    const age = parseInt(document.getElementById("age").value); // Parse age to number
     const prescription = document.getElementById("prescription").value;
     const diagnosis = document.getElementById("diagnosis").value;
 
     const data = {
         id: globalId,
-        name: name,
-        age: parseInt(age), // Ensure age is treated as a number
-        prescription: prescription,
-        diagnosis: diagnosis
+        name,
+        age,
+        prescription,
+        diagnosis,
     };
 
     console.log("globalId before:", globalId);
     globalId += 1;
     console.log("globalId after:", globalId);
 
-    postPatient(JSON.stringify(data));
+    await postPatient(JSON.stringify(data)); // Ensure post is completed before resetting
     patientForm.reset(); // Clear form after submission
 }
 
-// Attach the event listener only once.
+// Attach the event listener once
 patientForm.addEventListener("submit", addPatient);
 
 // Fetch and Display Patients
 async function fetchPatients() {
     console.log("Fetching patients...");
     try {
-        const response = await fetch(apiUrl); // Await the fetch call
+        const response = await fetch(apiUrl);
         if (!response.ok) throw new Error("Failed to fetch patients");
-        const patients = await response.json(); // Await the JSON conversion
+        const patients = await response.json();
         console.log("Patients fetched:", patients);
-        renderPatients(patients); // Render the fetched patients
+        renderPatients(patients);
     } catch (error) {
         console.error("Error fetching patients:", error);
     }
 }
 
-
 // Render Patients as Cards
 function renderPatients(patients) {
+    if (patients.length === 0) {
+        patientList.innerHTML = `<p class="text-center text-gray-500">No patients found.</p>`;
+        return;
+    }
+
     patientList.innerHTML = patients.map(patient => `
-        <div class="bg-white p-4 shadow-md rounded-md">
+        <div class="bg-white p-4 shadow-md rounded-md mb-4">
             <h3 class="text-xl font-bold text-gray-800">${patient.name}</h3>
             <p class="text-gray-600">Age: ${patient.age}</p>
             <p class="text-gray-600">Diagnosis: ${patient.diagnosis}</p>
@@ -69,10 +73,10 @@ function renderPatients(patients) {
 searchBtn.addEventListener("click", async () => {
     const query = searchInput.value.toLowerCase();
     try {
-        const response =  fetch(apiUrl);
+        const response = await fetch(apiUrl);
         if (!response.ok) throw new Error("Failed to fetch patients");
-        const patients =  response.json();
-        const filteredPatients = patients.filter(patient => 
+        const patients = await response.json();
+        const filteredPatients = patients.filter(patient =>
             patient.name.toLowerCase().includes(query)
         );
         renderPatients(filteredPatients);
@@ -82,9 +86,9 @@ searchBtn.addEventListener("click", async () => {
 });
 
 // Delete Patient
- function deletePatient(id) {
+async function deletePatient(id) {
     try {
-        const response =  fetch(`${apiUrl}/${id}`, { method: "DELETE" });
+        const response = await fetch(`${apiUrl}/${id}`, { method: "DELETE" });
         if (!response.ok) throw new Error("Failed to delete patient");
         fetchPatients(); // Refresh the list after deletion
     } catch (error) {
@@ -93,12 +97,12 @@ searchBtn.addEventListener("click", async () => {
 }
 
 // Add Patient to Database
- function postPatient(data) {
+async function postPatient(data) {
     try {
-        const response =  fetch(apiUrl, {
+        const response = await fetch(apiUrl, {
             method: "POST",
             headers: { 'Content-Type': 'application/json' },
-            body: data
+            body: data,
         });
         if (!response.ok) throw new Error("Failed to post patient");
         console.log("Patient successfully added");
