@@ -84,3 +84,4 @@ async function deletePatient(id) {
 // Initialize by fetching patients on page load
 fetchPatients();
 
+
