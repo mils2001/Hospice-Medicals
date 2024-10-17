@@ -74,12 +74,14 @@ async function deletePatient(id) {
     try {
         const response = await fetch(`${apiUrl}/${id}`, { method: 'DELETE' });
         if (!response.ok) throw new Error('Failed to delete patient');
+        
         console.log('Patient deleted successfully');
         fetchPatients(); // Refresh patient list
     } catch (error) {
         console.error('Error deleting patient:', error);
     }
 }
+
 
 // Initialize by fetching patients on page load
 fetchPatients();

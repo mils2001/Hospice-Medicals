@@ -1,13 +1,6 @@
 {
   "Patients": [
     {
-      "id": "10001",
-      "name": "john",
-      "age": 23,
-      "prescription": "Antibiotics",
-      "diagnosis": "malaria"
-    },
-    {
       "id": "cdb8",
       "name": "kelvin",
       "age": 32,
