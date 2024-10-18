@@ -1,0 +1,32 @@
+{
+  "Patients": [
+    {
+      "id": "cdb8",
+      "name": "kelvin",
+      "age": 32,
+      "diagnosis": "Cholera",
+      "prescription": "Antibiotics"
+    },
+    {
+      "id": "b5a3",
+      "name": "james",
+      "age": 23,
+      "diagnosis": "malaria",
+      "prescription": "Antibiotics"
+    },
+    {
+      "id": "64b7",
+      "name": "Nancy Kamau",
+      "age": 30,
+      "diagnosis": "Typhoid",
+      "prescription": "Capsules,Antibiotics."
+    },
+    {
+      "id": "ec2c",
+      "name": "john",
+      "age": 23,
+      "diagnosis": "malaria",
+      "prescription": "Capsules,Antibiotics."
+    }
+  ]
+}
