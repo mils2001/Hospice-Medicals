@@ -6,8 +6,21 @@
   },
   "scripts": {
     "build:css": "npx tailwindcss -i ./styles.css -o ./dist/output.css --watch"
-  }
+  },
+  "name": "hospice",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/mils2001/Hospice-Medicals.git"
+  },
+  "author": "chris <Mileschris466@gmail.com>",
+  "license": "MIT",
+  "description": "Hospice App is a web-based platform designed to streamline patient-doctor communication and help patients manage their healthcare needs. With features such as messaging, prescription tracking, and appointment reminders, the app aims to enhance the patient experience by offering a simple and intuitive interface. Table of Contents",
+  "bugs": {
+    "url": "https://github.com/mils2001/Hospice-Medicals/issues"
+  },
+  "homepage": "https://github.com/mils2001/Hospice-Medicals#readme",
+  "devDependencies": {},
+  "keywords": []
 }
-
-
-
