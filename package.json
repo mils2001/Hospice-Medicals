@@ -4,9 +4,15 @@
     "postcss": "^8.4.47",
     "tailwindcss": "^3.4.14"
   },
-  "scripts": {
-    "build:css": "npx tailwindcss -i ./styles.css -o ./dist/output.css --watch"
-  },
+  
+  
+    "scripts": {
+      "build:css": "npx tailwindcss -i ./styles.css -o ./dist/output.css --watch",
+      "start": "node index.js"
+      
+    },
+  
+  
   "name": "hospice",
   "version": "1.0.0",
   "main": "index.js",
