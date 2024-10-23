@@ -13,6 +13,20 @@
       "age": 30,
       "diagnosis": "Typhoid",
       "prescription": "Capsules,Antibiotics."
+    },
+    {
+      "id": "2a03",
+      "name": "George Wandayi",
+      "age": 45,
+      "diagnosis": "Diabetes",
+      "prescription": "Diabrem Pills"
+    },
+    {
+      "name": "Dorothy Mambo",
+      "age": 21,
+      "diagnosis": "Flu",
+      "prescription": "Centrizine",
+      "id": "dkod_61"
     }
   ]
 }
